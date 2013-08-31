@@ -32,7 +32,7 @@ So ist ein `Repository` eine Menge, man könnte also statt `StoryRepository` sch
 
 ## Stil
 
-### Camel Case & Groß- und Kleinschreibung
+### Groß- und Kleinschreibung
 
 Grundsätzlich gilt: Namespaces, Klassen und Properties werden immer groß geschrieben.
 
@@ -56,9 +56,27 @@ Grundsätzlich gilt: Namespaces, Klassen und Properties werden immer groß gesch
 		}
 	}
 
-Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, erfolgt dies in der `CamelCaseSchreibweise`. Für Namespaces, Klassen und Properties gilt, dass jeweils mit einem Großbuchstaben begonnen wird.
-
 Parameter oder (methoden-interne) Variablennamen werden klein geschrieben.
+
+**Falsch:**
+
+	public void Foo(string Bar)
+	{
+		string FirstName = Bar;
+	}
+
+**Richtig:**
+
+	public void Foo(string bar)
+	{
+		string firstName = bar;
+	}
+
+## CamelCase
+
+Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, erfolgt dies in der _CamelCaseSchreibweise_. 
+
+Für Namespaces, Klassen und Properties gilt, dass jeweils mit einem Großbuchstaben begonnen wird. Parameter oder (methoden-interne) Variablennamen beginnen klein.
 
 **Falsch:**
 
