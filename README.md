@@ -229,8 +229,8 @@ Erscheint beispielsweise die Implementierung einer Methode derart komplex, dass 
 Ist dies nicht möglich oder erscheinen Kommentare dennoch sinnvoll, dann eigenen sich XML-Kommentare in C# am besten. Das gilt im Übrigen natürlich auch für Komponenten oder Libaries, die häufig von Dritten eingesetzt werden. Hier dienen XML-Kommentare innerhalb der üblichen Entwicklungsumgebungen als Quelle für die Hilfe-Texte, die die IntelliSense-Funktionen zur Verfügung stellen.
 
 	/// <summary>
-  /// Bar!
-  /// </summary>
+	/// Bar!
+	/// </summary>
 	public class Foo
 	{
 	}
