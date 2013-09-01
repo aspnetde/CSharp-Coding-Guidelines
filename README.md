@@ -199,6 +199,10 @@ Häufig ist das deutlich lesbarer als die doch ziemlich redundante Deklaration m
 
 Bei primitiven Datentypen wie `int` und `double`, die Zahlen repräsentieren, ziehen wir hingegen den expliziten Typ vor. So ist leichter zu erkennen, ob es sich um Fließkomma- oder ganze Zahlen handelt.
 
+### Verzicht auf this
+
+Auf die Verwendung von this wird vollständig verzichtet. Durch die Verwendung des Unterstrich `_` für private Felder gibt es hierzu auch keinen Zwang mehr.
+
 ### Leerzeilen
 
 Nach öffnenden und vor schließenden Klammern werden keine Leerzeilen eingefügt.
