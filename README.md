@@ -203,6 +203,10 @@ Bei primitiven Datentypen wie `int` und `double`, die Zahlen repräsentieren, zi
 
 Auf die Verwendung von this wird vollständig verzichtet. Durch die Verwendung des Unterstrich `_` für private Felder gibt es hierzu auch keinen Zwang mehr.
 
+### Verwendung des "private"-Modifizierers
+
+Obwohl auf ihn ebenso verzichtet werden könnte, da alles ohne Modifizierer per default `private` ist, verwenden wir ihn für alle privaten Elemente. Grund ist der schnellere Überblick über öffentliche und nicht-öffentliche Elemente beim Einlesen in neuen Code, wenn die nicht-öffentlichen auch direkt als solche explizit gekennzeichnet sind.
+
 ### Leerzeilen
 
 Nach öffnenden und vor schließenden Klammern werden keine Leerzeilen eingefügt.
