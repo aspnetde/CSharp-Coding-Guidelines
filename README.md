@@ -130,6 +130,36 @@ Private Felder beginnen **grundsätzlich** mit einem Unterstrich, sodass diese l
         }
     }
 
+### Sonderfall: Tests
+
+Um die Lesbarkeit von automatisierten Tests sowohl im TestRunner als auch im konkreten Test-Code zu erhöhen, setzen wir hier ausnahmslos auf Unterstriche zur Trennung von Wörtern.
+
+**Falsch:**
+
+	[TestFixture]
+	public class WennDieSonneScheint
+	{
+		[Test]
+		public void WächstInMeinemGartenGras()
+		{
+			// ...
+		}
+	}
+
+**Richtig:**
+
+	[TestFixture]
+	public class Wenn_die_Sonne_scheint
+	{
+		[Test]
+		public void Wächst_in_meinem_Garten_Gras()
+		{
+			// ...
+		}
+	}
+
+_Anmerkung: an dieser Stelle sind ausnahmsweise auch Umlaute und andere Sonderzeichen der Sprache erlaubt, in der der Test formuliert wird. Der Grund hierfür ist einfach: Tests sind häufig eher Spezifikationen, und diese lassen sich flüssiger erstellen und schreiben, wenn man auf die Formatierung nicht sonderlich viel Rücksicht nehmen muss. Siehe auch http://code.69grad.de/69-testing._ 
+
 ### Ungarische Notation
 
 Bei der ungarischen Notation wird dem Variablennamen der Typ vorangestellt, was bei untypisierten Sprachen unter seltenen Umständen hilfreich sein kann, bei C# jedoch vollkommen nutzlos ist.
