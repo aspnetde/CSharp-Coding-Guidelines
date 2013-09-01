@@ -72,11 +72,15 @@ Parameter oder (methoden-interne) Variablennamen werden klein geschrieben.
 		string firstName = bar;
 	}
 
-## CamelCase
+### Abkürzungen
 
-Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, erfolgt dies in der _CamelCaseSchreibweise_. 
+Abkürzungen mit einer Länge von zwei Zeichen werden Großgeschrieben, also `ID` statt `Id`.
 
-Für Namespaces, Klassen und Properties gilt, dass jeweils mit einem Großbuchstaben begonnen wird. Parameter oder (methoden-interne) Variablennamen beginnen klein.
+Abkürzungen mit mindestens drei Buchstaben, werden jedoch normal ausgeschrieben, also `Http` statt `HTTP`.
+
+## PascalCase & camelCase
+
+Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, so erfolgt dies per `CamelCase` (Anfangsbuchstabe klein, gilt für Parameter oder (methoden-interne) Variablennamen) bzw. `PascalCase (mit großem Anfangsbuchstaben, gilt für Namespaces, Klassen und Properties).
 
 **Falsch:**
 
@@ -92,7 +96,7 @@ Für Namespaces, Klassen und Properties gilt, dass jeweils mit einem Großbuchst
 
 	public class StoryRepository
 	{
-		public IEnumerable <Story> FindByName(string storyName)
+		public IEnumerable<Story> FindByName(string storyName)
 		{
 			// ...
 		}
@@ -166,6 +170,22 @@ Falsch hingegen ist:
 
     public void Bar() {
     }
+
+### Leerzeichen
+
+Nach Methodennamen sowie nach öffnenden und vor schließenden Klammern werden keine Leerzeichen gesetzt.
+
+**Falsch**
+
+	public void Foo ( string param )
+	{
+	}
+
+**Richtig**
+
+	public void Foo(string param)
+	{
+	}
 
 ### Verwendung von var
 
