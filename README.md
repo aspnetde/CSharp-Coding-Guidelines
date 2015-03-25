@@ -3,7 +3,7 @@
 ## Übersicht
 
 - [Namenskonventionen](#Namenskonventionen)  
-- [Stil](#Stil)  
+- [Groß- und Kleinschreibung](#Stil)  
 - [PascalCase & camelCase](#PascalCaseCamelCase)
 - [Ungarische Notation](#UngarischeNotation)
 - [Namespaces](#Namespaces)
@@ -48,9 +48,7 @@ So ist ein `Repository` eine Menge, man könnte also statt `StoryRepository` sch
 Ähnliches gilt bei ASP.NET MVC bspw. für Controller. Hier ist es schlicht Konvetion, den `StoryController` zu verwenden.
 
 <a name="Stil"/>
-## Stil
-
-### Groß- und Kleinschreibung
+## Groß- und Kleinschreibung
 
 Grundsätzlich gilt: Namespaces, Klassen und Properties werden immer groß geschrieben.
 
@@ -90,11 +88,6 @@ Parameter oder (methoden-interne) Variablennamen werden klein geschrieben.
 		string firstName = bar;
 	}
 
-### Abkürzungen
-
-Abkürzungen mit einer Länge von zwei Zeichen werden Großgeschrieben, also `ID` statt `Id`.
-
-Abkürzungen mit mindestens drei Buchstaben, werden jedoch normal ausgeschrieben, also `Http` statt `HTTP`.
 
 <a name="PascalCaseCamelCase"/>
 ## PascalCase & camelCase
