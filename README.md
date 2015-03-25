@@ -3,6 +3,7 @@
 ## Übersicht
 
 - [Namenskonventionen](#Namenskonventionen)  
+- [Struktur von Klassen (und Strukturen)](#Struktur)  
 - [Groß- und Kleinschreibung](#Stil)  
 - [PascalCase & camelCase](#PascalCaseCamelCase)
 - [Ungarische Notation](#UngarischeNotation)
@@ -46,6 +47,44 @@ Ausnahmen bestätigen die Regel: dort, wo es sich um handelsübliche Bezeichnung
 So ist ein `Repository` eine Menge, man könnte also statt `StoryRepository` schlicht auch `Stories` verwenden. Da dies jedoch potentiell schnell zu Missverständnissen mit Objekten in anderen Bereichen der Anwendung außerhalb des Datenzugriffs führt, kann `Repository` genutzt werden. Erst Recht, wenn die Aufteilung in `StoryReadRepository` und `StoryWriteRepository` erfolgt.
 
 Ähnliches gilt bei ASP.NET MVC bspw. für Controller. Hier ist es schlicht Konvetion, den `StoryController` zu verwenden.
+
+<a name="Struktur"/>
+## Struktur von Klassen (und Strukturen)
+
+Grundsätzlich sollten sich Klassen und Strukturen flüssig von oben nach unten lesen lassen, wobei eine darüber hinausgehende inhaltliche Strukturierung sinnvoll ist:
+
+1. Konstanten
+2. Private Felder
+3. Öffentliche Eigenschaften (Properties)
+4. Konstruktor(en)
+5. Öffentliche Methoden
+6. Private Methoden
+
+Beispiel:
+
+    public class Foo
+    {
+        private const int BAR = 1;
+
+        private readonly string _fooBar;
+
+        public string Whatever { get; set; }
+
+        public Foo()
+        {
+            _fooBar = "barFoo";
+        }
+
+        public void MachWas()
+        {
+            Was();
+        }
+
+        private void Was()
+        {
+        }
+    }
+
 
 <a name="Stil"/>
 ## Groß- und Kleinschreibung
