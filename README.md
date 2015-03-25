@@ -7,6 +7,7 @@
 - [Groß- und Kleinschreibung](#Stil)  
 - [PascalCase & camelCase](#PascalCaseCamelCase)
 - [Ungarische Notation](#UngarischeNotation)
+- [Konstanten](#Konstanten)
 - [Namespaces](#Namespaces)
 - [Geschweifte Klammern](#GeschweifteKlammern)
 - [Leerzeichen](#Leerzeichen)
@@ -153,6 +154,10 @@ Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, so erfolgt dies per 
 		}
 	}
 
+### Sonderfall: Konstanten
+
+Siehe: [Konstanten](#Konstanten).
+
 ### Sonderfall: Private Felder
 
 Private Felder beginnen **grundsätzlich** mit einem Unterstrich, sodass diese leicht von Parametern und lokalen Variablen unterschieden werden können.
@@ -222,6 +227,19 @@ Ein Beispiel wäre
 	intAlter = 69;
 
 **Ungarische Notation wird nicht verwendet** — *never, ever*.
+
+<a name="Konstanten"/>
+## Konstanten
+
+Konstanten werden in der Regel durchgängig Groß und mit Unterstrichen geschrieben. Dies soll ihre herausgehobene Stellung betonen und das Verständnis entsprechend fördern.
+
+Beispiel:
+
+    public class Auto
+    {
+        private const double MINIMALER_REIFENDRUCK = 2;
+        private const double MAXIMALER_REIFENDRUCK = 3;
+    }
 
 <a name="Namespaces"/>
 ## Namespaces
