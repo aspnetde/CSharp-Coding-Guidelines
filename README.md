@@ -1,4 +1,6 @@
-# 69° C# Coding Style Guidelines
+# C# Coding Style Guidelines
+
+Die hier dargestellten Regeln und Empfehlungen sind nicht "die Wahrheit", sondern Ergebnis jahrelanger Arbeit und Erfahrung in der Entwicklung mit C# und entsprechend Grundlage aller [meiner](https://thomasbandt.com/) aktuellen C#-Projekte und derer meiner Firma [69°](http://www.69grad.de/).
 
 ## Übersicht
 
