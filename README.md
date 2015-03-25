@@ -1,5 +1,22 @@
 # 69° C# Coding Style Guidelines
 
+## Übersicht
+
+- [Namenskonventionen](#Namenskonventionen)  
+- [Stil](#Stil)  
+- [PascalCase & camelCase](#PascalCaseCamelCase)
+- [Ungarische Notation](#UngarischeNotation)
+- [Namespaces](#Namespaces)
+- [Geschweifte Klammern](#GeschweifteKlammern)
+- [Leerzeichen](#Leerzeichen)
+- [Verwendung von var](#Var)
+- [Verzicht auf this](#This)
+- [Verwendung des "private"-Modifizierers](#Private)
+- [Leerzeilen](#Leerzeilen)
+- [Lines of Code (LOC) in Klassen und Methoden](#LOC)
+- [Kommentare](#Kommentare)
+
+<a name="Namenskonventionen"/>
 ## Namenskonventionen
 
 ### Sprechende Namen
@@ -30,6 +47,7 @@ So ist ein `Repository` eine Menge, man könnte also statt `StoryRepository` sch
 
 Ähnliches gilt bei ASP.NET MVC bspw. für Controller. Hier ist es schlicht Konvetion, den `StoryController` zu verwenden.
 
+<a name="Stil"/>
 ## Stil
 
 ### Groß- und Kleinschreibung
@@ -78,6 +96,7 @@ Abkürzungen mit einer Länge von zwei Zeichen werden Großgeschrieben, also `ID
 
 Abkürzungen mit mindestens drei Buchstaben, werden jedoch normal ausgeschrieben, also `Http` statt `HTTP`.
 
+<a name="PascalCaseCamelCase"/>
 ## PascalCase & camelCase
 
 Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, so erfolgt dies per `CamelCase` (Anfangsbuchstabe klein, gilt für Parameter oder (methoden-interne) Variablennamen) bzw. `PascalCase (mit großem Anfangsbuchstaben, gilt für Namespaces, Klassen und Properties).
@@ -160,7 +179,8 @@ Um die Lesbarkeit von automatisierten Tests sowohl im TestRunner als auch im kon
 
 _Anmerkung: an dieser Stelle sind ausnahmsweise auch Umlaute und andere Sonderzeichen der Sprache erlaubt, in der der Test formuliert wird. Der Grund hierfür ist einfach: Tests sind häufig eher Spezifikationen, und diese lassen sich flüssiger erstellen und schreiben, wenn man auf die Formatierung nicht sonderlich viel Rücksicht nehmen muss. Siehe auch http://code.69grad.de/69-testing._ 
 
-### Ungarische Notation
+<a name="UngarischeNotation"/>
+## Ungarische Notation
 
 Bei der ungarischen Notation wird dem Variablennamen der Typ vorangestellt, was bei untypisierten Sprachen unter seltenen Umständen hilfreich sein kann, bei C# jedoch vollkommen nutzlos ist.
 
@@ -171,7 +191,8 @@ Ein Beispiel wäre
 
 **Ungarische Notation wird nicht verwendet** — *never, ever*.
 
-### Namespaces
+<a name="Namespaces"/>
+## Namespaces
 
 Für Namespaces gilt: so kurz wie möglich, so lang wie nötig.
 
@@ -188,7 +209,8 @@ Falsch wären:
 	WhatstaysWebsiteControllers
 	Whatstays_Website.Controllers
 
-### Geschweifte Klammern
+<a name="GeschweifteKlammern"/>
+## Geschweifte Klammern
 
 Geschweifte Klammern, die einen Block definieren, werden in einer eigenen Zeile geöffnet und in einer eigenen Zeile wieder geschlossen. Richtig ist also:
 
@@ -201,7 +223,8 @@ Falsch hingegen ist:
     public void Bar() {
     }
 
-### Leerzeichen
+<a name="Leerzeichen"/>
+## Leerzeichen
 
 Nach Methodennamen sowie nach öffnenden und vor schließenden Klammern werden keine Leerzeichen gesetzt.
 
@@ -217,7 +240,8 @@ Nach Methodennamen sowie nach öffnenden und vor schließenden Klammern werden k
 	{
 	}
 
-### Verwendung von var
+<a name="Var"/>
+## Verwendung von var
 
 `var` verwenden wir in der Regel dort, wo der Typ einer Variablen bei deren Zuweisung klar ersichtlich wird:
 
@@ -229,15 +253,18 @@ Häufig ist das deutlich lesbarer als die doch ziemlich redundante Deklaration m
 
 Bei primitiven Datentypen wie `int` und `double`, die Zahlen repräsentieren, ziehen wir hingegen den expliziten Typ vor. So ist leichter zu erkennen, ob es sich um Fließkomma- oder ganze Zahlen handelt.
 
-### Verzicht auf this
+<a name="This"/>
+## Verzicht auf this
 
 Auf die Verwendung von this wird vollständig verzichtet. Durch die Verwendung des Unterstrich `_` für private Felder gibt es hierzu auch keinen Zwang mehr.
 
-### Verwendung des "private"-Modifizierers
+<a name="Private"/>
+## Verwendung des "private"-Modifizierers
 
 Obwohl auf ihn ebenso verzichtet werden könnte, da alles ohne Modifizierer per default `private` ist, verwenden wir ihn für alle privaten Elemente. Grund ist der schnellere Überblick über öffentliche und nicht-öffentliche Elemente beim Einlesen in neuen Code, wenn die nicht-öffentlichen auch direkt als solche explizit gekennzeichnet sind.
 
-### Leerzeilen
+<a name="Leerzeilen"/>
+## Leerzeilen
 
 Nach öffnenden und vor schließenden Klammern werden keine Leerzeilen eingefügt.
 
@@ -286,7 +313,8 @@ So würde z.B. Folgendes (bezogen auf die Formatierung) Sinn machen:
 		}
 	}
 
-### Lines of Code (LOC) in Klassen und Methoden
+<a name="LOC"/>
+## Lines of Code (LOC) in Klassen und Methoden
 
 Ausnahmen bestätigen die Regel, die besagt: eine Klasse mit mehr als ca. 150 Zeilen Code ist schwieriger zu verstehen, als eine Klasse mit weniger Zeilen.
 
@@ -294,7 +322,8 @@ Nicht immer ist das einzuhalten, häufig aber macht das Aufteilen in mehrere Kla
 
 Laut "Clean Code" sollte eine Methode nicht mehr als 8 Zeilen Code enthalten. Das ist in der Praxis kaum möglich. Jedoch lässt sich wohl auch hier darauf achten, dass die prozedurale Abarbeitung "einer" Aufgabe in einer großen Methode häufig in viele kleine Methoden aufgebrochen werden kann.
 
-### Kommentare
+<a name="Kommentare"/>
+## Kommentare
 
 Wir versuchen den Code grundsätzlich so zu schreiben, dass er sowohl von der Benennung der Objekte als auch von der konkreten Implementierung her leicht lesbar und damit verständlich ist.
 
