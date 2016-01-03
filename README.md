@@ -114,7 +114,7 @@ namespace whatstays
 **Richtig:**
 
 ```cs
-namesapce Whatstays
+namespace Whatstays
 {
 	public class Story
 	{
