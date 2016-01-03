@@ -29,11 +29,15 @@ Alle Namen müssen treffend benannt werden, sodass leicht verständlich ist, wof
 
 Nicht gut (Wofür wird dieser StringBuilder eingesetzt?)
 
-    var stringBuilder = new StringBuilder();
+```cs
+var stringBuilder = new StringBuilder();
+```
 
 Besser! Jetzt ist klar, was damit gemacht wird.
 
-    var htmlOutput = StringBuilder();
+```cs
+var htmlOutput = StringBuilder();
+```
 
 ### Aussprechbare Namen
 
@@ -65,29 +69,30 @@ Grundsätzlich sollten sich Klassen und Strukturen flüssig von oben nach unten 
 
 Beispiel:
 
-    public class Foo
+```cs
+public class Foo
+{
+    private const int BAR = 1;
+    
+    private readonly string _fooBar;
+    
+    public string Whatever { get; set; }
+    
+    public Foo()
     {
-        private const int BAR = 1;
-
-        private readonly string _fooBar;
-
-        public string Whatever { get; set; }
-
-        public Foo()
-        {
-            _fooBar = "barFoo";
-        }
-
-        public void MachWas()
-        {
-            Was();
-        }
-
-        private void Was()
-        {
-        }
+        _fooBar = "barFoo";
     }
-
+    
+    public void MachWas()
+    {
+        Was();
+    }
+    
+    private void Was()
+    {
+    }
+}
+```
 
 <a name="Stil"/>
 ## Groß- und Kleinschreibung
@@ -96,40 +101,47 @@ Grundsätzlich gilt: Namespaces, Klassen und Properties werden immer groß gesch
 
 **Falsch:**
 
-	namespace whatstays
+```cs
+namespace whatstays
+{
+	public class story
 	{
-		public class story
-		{
-			public string title { get; set; }
-		}
+		public string title { get; set; }
 	}
+}
+```
 
 **Richtig:**
 
-	namesapce Whatstays
+```cs
+namesapce Whatstays
+{
+	public class Story
 	{
-		public class Story
-		{
-			public string Title { get; set; }
-		}
+		public string Title { get; set; }
 	}
+}
+```
 
 Parameter oder (methoden-interne) Variablennamen werden klein geschrieben.
 
 **Falsch:**
 
-	public void Foo(string Bar)
-	{
-		string FirstName = Bar;
-	}
+```cs
+public void Foo(string Bar)
+{
+	string FirstName = Bar;
+}
+```
 
 **Richtig:**
 
-	public void Foo(string bar)
-	{
-		string firstName = bar;
-	}
-
+```cs
+public void Foo(string bar)
+{
+	string firstName = bar;
+}
+```
 
 <a name="PascalCaseCamelCase"/>
 ## PascalCase & camelCase
@@ -138,23 +150,27 @@ Werden Bezeichnungen aus mehreren Wörtern zusammengesetzt, so erfolgt dies per 
 
 **Falsch:**
 
-	public class Story_Repository
+```cs
+public class Story_Repository
+{
+	public IEnumerable<Story> find_by_Name(string story_name)
 	{
-		public IEnumerable<Story> find_by_Name(string story_name)
-		{
-			// ...
-		}
+		// ...
 	}
+}
+```
 
 **Richtig:**
 
-	public class StoryRepository
+```cs
+public class StoryRepository
+{
+	public IEnumerable<Story> FindByName(string storyName)
 	{
-		public IEnumerable<Story> FindByName(string storyName)
-		{
-			// ...
-		}
+		// ...
 	}
+}
+```
 
 ### Sonderfall: Konstanten
 
@@ -166,27 +182,31 @@ Private Felder beginnen **grundsätzlich** mit einem Unterstrich, sodass diese l
 
 **Falsch:**
 
-    public class Foo
+```cs
+public class Foo
+{
+    private int bar;
+    
+    public Foo(int bar)
     {
-        private int bar;
-        
-        public Foo(int bar)
-        {
-            this.bar = bar;
-        }
+        this.bar = bar;
     }
+}
+```
 
 **Richtig:**
 
-    public class Foo
+```cs
+public class Foo
+{
+    private int _bar;
+    
+    public Foo(int bar)
     {
-        private int _bar;
-        
-        public Foo(int bar)
-        {
-            _bar = bar;
-        }
+        _bar = bar;
     }
+}
+```
 
 ### Sonderfall: Tests
 
@@ -194,27 +214,31 @@ Um die Lesbarkeit von automatisierten Tests sowohl im TestRunner als auch im kon
 
 **Falsch:**
 
-	[TestFixture]
-	public class WennDieSonneScheint
+```cs
+[TestFixture]
+public class WennDieSonneScheint
+{
+	[Test]
+	public void WächstInMeinemGartenGras()
 	{
-		[Test]
-		public void WächstInMeinemGartenGras()
-		{
-			// ...
-		}
+		// ...
 	}
+}
+```
 
 **Richtig:**
 
-	[TestFixture]
-	public class Wenn_die_Sonne_scheint
+```cs
+[TestFixture]
+public class Wenn_die_Sonne_scheint
+{
+	[Test]
+	public void Wächst_in_meinem_Garten_Gras()
 	{
-		[Test]
-		public void Wächst_in_meinem_Garten_Gras()
-		{
-			// ...
-		}
+		// ...
 	}
+}
+```
 
 _Anmerkung: an dieser Stelle sind ausnahmsweise auch Umlaute und andere Sonderzeichen der Sprache erlaubt, in der der Test formuliert wird. Der Grund hierfür ist einfach: Tests sind häufig eher Spezifikationen, und diese lassen sich flüssiger erstellen und schreiben, wenn man auf die Formatierung nicht sonderlich viel Rücksicht nehmen muss. Siehe auch http://code.69grad.de/69-testing._ 
 
@@ -225,8 +249,10 @@ Bei der ungarischen Notation wird dem Variablennamen der Typ vorangestellt, was 
 
 Ein Beispiel wäre
 
-	strName = "Max Mustermann";
-	intAlter = 69;
+```cs
+strName = "Max Mustermann";
+intAlter = 69;
+```
 
 **Ungarische Notation wird nicht verwendet** — *never, ever*.
 
@@ -237,11 +263,13 @@ Konstanten werden in der Regel durchgängig Groß und mit Unterstrichen geschrie
 
 Beispiel:
 
-    public class Auto
-    {
-        private const double MINIMALER_REIFENDRUCK = 2;
-        private const double MAXIMALER_REIFENDRUCK = 3;
-    }
+```cs
+public class Auto
+{
+    private const double MINIMALER_REIFENDRUCK = 2;
+    private const double MAXIMALER_REIFENDRUCK = 3;
+}
+```
 
 <a name="Namespaces"/>
 ## Namespaces
@@ -266,14 +294,18 @@ Falsch wären:
 
 Geschweifte Klammern, die einen Block definieren, werden in einer eigenen Zeile geöffnet und in einer eigenen Zeile wieder geschlossen. Richtig ist also:
 
-    public void Foo()
-    {
-    }
+```cs
+public void Foo()
+{
+}
+```
 
 Falsch hingegen ist:
 
-    public void Bar() {
-    }
+```cs
+public void Bar() {
+}
+```
 
 <a name="Leerzeichen"/>
 ## Leerzeichen
@@ -282,26 +314,34 @@ Nach Methodennamen sowie nach öffnenden und vor schließenden Klammern werden k
 
 **Falsch**
 
-	public void Foo ( string param )
-	{
-	}
+```cs
+public void Foo ( string param )
+{
+}
+```
 
 **Richtig**
 
-	public void Foo(string param)
-	{
-	}
+```cs
+public void Foo(string param)
+{
+}
+```
 
 <a name="Var"/>
 ## Verwendung von var
 
 `var` verwenden wir in der Regel dort, wo der Typ einer Variablen bei deren Zuweisung klar ersichtlich wird:
 
-    var duck = new Duck();
+```cs
+var duck = new Duck();
+```
 
 Häufig ist das deutlich lesbarer als die doch ziemlich redundante Deklaration mit explizitem Typ:
 
-    Duck duck = new Duck();
+```cs
+Duck duck = new Duck();
+```
 
 Bei primitiven Datentypen wie `int` und `double`, die Zahlen repräsentieren, ziehen wir hingegen den expliziten Typ vor. So ist leichter zu erkennen, ob es sich um Fließkomma- oder ganze Zahlen handelt.
 
@@ -322,48 +362,54 @@ Nach öffnenden und vor schließenden Klammern werden keine Leerzeilen eingefüg
 
 **Falsch:**
 
-    public class Foo
+```cs
+public class Foo
+{
+
+    private int _bar;
+    
+    public Foo(int bar)
     {
 
-        private int _bar;
-        
-        public Foo(int bar)
-        {
-
-            _bar = bar;
-
-        }
+        _bar = bar;
 
     }
+
+}
+```
 
 **Richtig:**
 
-    public class Foo
+```cs
+public class Foo
+{
+    private int _bar;
+    
+    public Foo(int bar)
     {
-        private int _bar;
-        
-        public Foo(int bar)
-        {
-            _bar = bar;
-        }
+        _bar = bar;
     }
+}
+```
 
 Innerhalb von Methoden werden Leerzeilen möglichst so eingesetzt, dass einzelne Funktionsblöcke innerhalb einer Methode separiert werden.
 
 So würde z.B. Folgendes (bezogen auf die Formatierung) Sinn machen:
 
-	public class Foo
-	{
-		private int _bar;
+```cs
+public class Foo
+{
+	private int _bar;
 
-		public int Foo(int bar)
-		{
-			int foo = bar * 2;
-			_bar = foo;
-						
-			return foo;
-		}
+	public int Foo(int bar)
+	{
+		int foo = bar * 2;
+		_bar = foo;
+					
+		return foo;
 	}
+}
+```
 
 <a name="LOC"/>
 ## Lines of Code (LOC) in Klassen und Methoden
@@ -385,9 +431,11 @@ Erscheint beispielsweise die Implementierung einer Methode derart komplex, dass 
 
 Ist dies nicht möglich oder erscheinen Kommentare dennoch sinnvoll, dann eigenen sich XML-Kommentare in C# am besten. Das gilt im Übrigen natürlich auch für Komponenten oder Libaries, die häufig von Dritten eingesetzt werden. Hier dienen XML-Kommentare innerhalb der üblichen Entwicklungsumgebungen als Quelle für die Hilfe-Texte, die die IntelliSense-Funktionen zur Verfügung stellen.
 
-	/// <summary>
-	/// Bar!
-	/// </summary>
-	public class Foo
-	{
-	}
+```cs
+/// <summary>
+/// Bar!
+/// </summary>
+public class Foo
+{
+}
+```
